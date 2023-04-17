@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_17_011720) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_17_015607) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_011720) do
     t.string "title", null: false
     t.text "description", null: false
     t.string "video_url"
-    t.string "thumbnail_url", default: "https://placehold.it/200x250"
+    t.string "thumbnail", default: "https://placehold.it/200x250"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

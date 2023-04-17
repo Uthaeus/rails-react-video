@@ -27,7 +27,7 @@ class Api::V1::ProjectsController < ApplicationController
   private
 
   def project_params
-    params.permit(:title, :description, :video_url, :thumbnail_url)
+    params.permit(:title, :description, :video_url, :thumbnail)
   end
 
   def set_project

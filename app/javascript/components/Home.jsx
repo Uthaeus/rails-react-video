@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <>
             <h1 className='home-title'>Home Page</h1>
-            <Link to='/recipes'>Recipes</Link>
+            <Link to='/projects'>Projects</Link>
         </>
     );
 };
