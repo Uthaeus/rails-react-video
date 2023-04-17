@@ -9,18 +9,34 @@
     .nav-left {
         display: flex;
         flex-direction: row;
+
+        .nav-logo {
+            margin-right: 8rem;
+        }
     }
 
     a {
         color: #fff;
         text-decoration: none;
         transition: 0.3s ease-in-out;
-        margin: 0 10px;
+        margin: 0 25px;
 
         &:hover {
             cursor: pointer;
             text-decoration: underline;
             opacity: 0.8;
         }
+    }
+}
+
+.logout-btn {
+    background-color: #23437a;
+    color: #fff;
+    border: none;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #1a2f5a;
     }
 }
