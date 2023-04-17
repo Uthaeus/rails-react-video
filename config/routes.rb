@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'projects/index'
+      get 'projects/auth'
       post 'projects/create'
       get '/show/:id', to: 'projects#show'
       delete '/destroy/:id', to: 'projects#destroy'

@@ -6,6 +6,7 @@ import ProjectItem from './projectItem';
 function Projects() {
     const navigate = useNavigate();
     const [projects, setProjects] = useState([]);
+    const [isloggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
         fetch('/api/v1/projects/index')
@@ -19,16 +20,31 @@ function Projects() {
             setProjects(response);
         })
         .catch(() => navigate('/'));
+
+        
+    }, []);
+
+    useEffect(() => {
+        fetch('/api/v1/projects/auth')
+        .then((response) => {
+            if (response.ok) {
+                setIsLoggedIn(true);
+            }
+        })
+        .catch(error => {
+            console.log('auth', error);
+        })
     }, []);
 
     const allProjects = projects.map((project) => (
-        <ProjectItem key={project.id} project={project} />
+        <ProjectItem key={project.id} project={project} loggedIn={isloggedIn} />
     ))
 
     return (
         <div className='container projects-container'>
             <div className='projects-header'>
                 <h2 className='w-100 text-center'>Here are some of my projects</h2>
+                <p>{isloggedIn && <Link to='/projects/new'>Create New Project</Link>}</p>
             </div>
             <div className="row row-cols-2">
                 {allProjects}
