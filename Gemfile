@@ -68,4 +68,5 @@ group :development do
 end
 
 gem 'devise', '~> 4.9', '>= 4.9.2'
+gem 'petergate', '~> 3.0'
 

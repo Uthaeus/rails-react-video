@@ -6,6 +6,11 @@
     padding: 15px;
     background-color: #23437a;
 
+    .nav-left {
+        display: flex;
+        flex-direction: row;
+    }
+
     a {
         color: #fff;
         text-decoration: none;

@@ -1,5 +1,5 @@
 <div class='nav'>
-    <div>
+    <div class='nav-left'>
         <div class='nav__logo'>
             <a href='/'>Video Editing Portfolio</a>
         </div>
@@ -11,7 +11,10 @@
         </div>
     </div>
     <div>
-        <p>login</p>
-        <p>logout</p>
+        <% if logged_in?(:site_admin) %>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <% else %>
+            <%= link_to 'Login', new_user_session_path %>
+        <% end %>
     </div>
 </div>
