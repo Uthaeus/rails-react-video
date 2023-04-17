@@ -30,7 +30,7 @@ function Projects() {
             <div className='projects-header'>
                 <h2 className='w-100 text-center'>Here are some of my projects</h2>
             </div>
-            <div className="row row-cols-3">
+            <div className="row row-cols-2">
                 {allProjects}
             </div>
         </div>
