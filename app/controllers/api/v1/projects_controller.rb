@@ -1,5 +1,5 @@
 class Api::V1::ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :destroy]
+  before_action :set_project, only: [:show, :destroy, :update]
   access all: [:index, :show], site_admin: :all
 
   def index
@@ -23,6 +23,14 @@ class Api::V1::ProjectsController < ApplicationController
       render json: project
     else
       render json: project.errors
+    end
+  end
+
+  def update
+    if @project.update(project_params)
+      render json: @project
+    else
+      render json: @project.errors, status: :unprocessable_entity
     end
   end
 

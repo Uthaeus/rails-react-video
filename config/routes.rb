@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get 'projects/index'
       get 'projects/auth'
       post 'projects/create'
+      put 'projects/update'
       get '/show/:id', to: 'projects#show'
       delete '/destroy/:id', to: 'projects#destroy'
     end
